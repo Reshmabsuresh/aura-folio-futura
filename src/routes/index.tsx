@@ -13,7 +13,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 import heroBg from "@/assets/hero-bg.jpg";
-import portrait from "@/assets/portrait.jpg";
+import portraitAsset from "@/assets/portrait.png.asset.json";
+const portrait = portraitAsset.url;
 import pBotim from "@/assets/project-botim.jpg";
 import pHr from "@/assets/project-hr.jpg";
 import pFitness from "@/assets/project-fitness.jpg";
@@ -22,9 +23,9 @@ import pEcom from "@/assets/project-ecom.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Reshma Suresh — Senior UX/UI Designer" },
-      { name: "description", content: "Portfolio of Reshma Suresh — a senior UX/UI designer crafting intuitive digital experiences that connect business goals with human needs." },
-      { property: "og:title", content: "Reshma Suresh — Senior UX/UI Designer" },
+      { title: "Reshma Suresh — UX/UI Designer" },
+      { name: "description", content: "Portfolio of Reshma Suresh — a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs." },
+      { property: "og:title", content: "Reshma Suresh — UX/UI Designer" },
       { property: "og:description", content: "Award-quality UX work across fintech, HR, health, and e-commerce." },
       { property: "og:type", content: "website" },
     ],
@@ -104,7 +105,7 @@ function Hero() {
               behind great products.
             </motion.h1>
             <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              I'm <span className="text-foreground">Reshma Suresh</span> — a senior UX/UI designer crafting intuitive digital experiences that connect business goals with human needs across fintech, enterprise, and health.
+              I'm <span className="text-foreground">Reshma Suresh</span> — a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs across fintech, enterprise, and health.
             </motion.p>
             <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.25 }} className="mt-10 flex flex-wrap items-center gap-3">
               <a href="#work" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90 transition glow">
@@ -127,7 +128,7 @@ function Hero() {
                 </div>
                 <div className="text-right">
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Experience</div>
-                  <div className="text-sm font-medium">7+ years</div>
+                  <div className="text-sm font-medium">3.5 years</div>
                 </div>
               </div>
             </div>
@@ -179,7 +180,7 @@ function About() {
   ];
   const stats = [
     { v: "48+", l: "Projects shipped" },
-    { v: "7+", l: "Years experience" },
+    { v: "3.5", l: "Years experience" },
     { v: "320", l: "User interviews" },
     { v: "94", l: "Usability tests run" },
   ];
@@ -189,7 +190,7 @@ function About() {
         <SectionHeading
           kicker="About"
           title={<>A designer who believes <em className="text-gradient not-italic">clarity is a feature</em>.</>}
-          sub="Seven years across consumer fintech, enterprise tooling, and digital health — partnering with product, engineering, and research teams to ship interfaces that feel inevitable."
+          sub="3.5 years across consumer fintech, enterprise tooling, and digital health — partnering with product, engineering, and research teams to ship interfaces that feel inevitable."
         />
 
         <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -619,7 +620,7 @@ function Footer() {
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-violet shadow-[0_0_12px_var(--violet)]" />
             <span className="font-medium">Reshma Suresh</span>
-            <span className="text-muted-foreground">— Senior UX/UI Designer</span>
+            <span className="text-muted-foreground">— UX/UI Designer</span>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted-foreground">
             <a href="#" className="hover:text-foreground transition">LinkedIn</a>
