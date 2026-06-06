@@ -13,7 +13,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 import heroBg from "@/assets/hero-bg.jpg";
-import portrait from "@/assets/portrait.jpg";
+import portraitAsset from "@/assets/portrait.png.asset.json";
+const portrait = portraitAsset.url;
 import pBotim from "@/assets/project-botim.jpg";
 import pHr from "@/assets/project-hr.jpg";
 import pFitness from "@/assets/project-fitness.jpg";
