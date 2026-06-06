@@ -128,7 +128,7 @@ function Hero() {
                 </div>
                 <div className="text-right">
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Experience</div>
-                  <div className="text-sm font-medium">7+ years</div>
+                  <div className="text-sm font-medium">3.5 years</div>
                 </div>
               </div>
             </div>
