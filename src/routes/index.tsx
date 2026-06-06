@@ -620,7 +620,7 @@ function Footer() {
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-violet shadow-[0_0_12px_var(--violet)]" />
             <span className="font-medium">Reshma Suresh</span>
-            <span className="text-muted-foreground">— Senior UX/UI Designer</span>
+            <span className="text-muted-foreground">— UX/UI Designer</span>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted-foreground">
             <a href="#" className="hover:text-foreground transition">LinkedIn</a>
