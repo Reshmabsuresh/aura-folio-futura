@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "motion/react";
-import { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 import {
   ArrowRight, ArrowDown, Mail, MapPin, Linkedin, Dribbble,
   Sparkles, Compass, Search, Lightbulb, PenTool, Layers, FlaskConical, Repeat, Rocket,
@@ -638,70 +638,6 @@ function Footer() {
   );
 }
 
-function ThanksReveal() {
-  const ref = useRef<HTMLDivElement>(null);
-  const mx = useMotionValue(-1000);
-  const my = useMotionValue(-1000);
-  const x = useSpring(mx, { stiffness: 200, damping: 25, mass: 0.4 });
-  const y = useSpring(my, { stiffness: 200, damping: 25, mass: 0.4 });
-  const [active, setActive] = useState(false);
-
-  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    mx.set(e.clientX - rect.left);
-    my.set(e.clientY - rect.top);
-  };
-
-  return (
-    <section
-      ref={ref}
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => { setActive(false); mx.set(-1000); my.set(-1000); }}
-      onMouseMove={handleMove}
-      className="relative w-full overflow-hidden cursor-none select-none py-10"
-      aria-label="Thanks for stopping by"
-    >
-      {/* Base dim text */}
-      <h2 className="relative whitespace-nowrap text-foreground/[0.06] font-black tracking-tight text-[18vw] leading-[0.9] px-[2vw]">
-        THANKS FOR STOPPING BY
-      </h2>
-      {/* Spotlight revealed text */}
-      <motion.h2
-        aria-hidden
-        className="pointer-events-none absolute inset-0 whitespace-nowrap text-foreground font-black tracking-tight text-[18vw] leading-[0.9] px-[2vw]"
-        style={{
-          WebkitMaskImage: useTransform(
-            [x, y],
-            ([lx, ly]) =>
-              `radial-gradient(260px circle at ${lx}px ${ly}px, black 0%, rgba(0,0,0,0.6) 35%, transparent 70%)`
-          ) as unknown as string,
-          maskImage: useTransform(
-            [x, y],
-            ([lx, ly]) =>
-              `radial-gradient(260px circle at ${lx}px ${ly}px, black 0%, rgba(0,0,0,0.6) 35%, transparent 70%)`
-          ) as unknown as string,
-        }}
-      >
-        THANKS FOR STOPPING BY
-      </motion.h2>
-      {/* Cursor blob */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -top-8 -left-8 h-16 w-16 rounded-full"
-        style={{
-          x,
-          y,
-          background: "radial-gradient(circle, oklch(0.88 0.22 130) 0%, oklch(0.78 0.24 130 / 0.6) 50%, transparent 70%)",
-          boxShadow: "0 0 60px oklch(0.85 0.22 130 / 0.8)",
-          opacity: active ? 1 : 0,
-          transition: "opacity 0.3s",
-        }}
-      />
-    </section>
-  );
-}
-
 function Portfolio() {
   return (
     <main className="relative min-h-screen overflow-x-clip">
@@ -715,7 +651,6 @@ function Portfolio() {
       <Tools />
       <Contact />
       <Footer />
-      <ThanksReveal />
     </main>
   );
 }
