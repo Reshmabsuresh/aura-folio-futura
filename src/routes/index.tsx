@@ -638,6 +638,84 @@ function Footer() {
   );
 }
 
+function ThanksForStoppingBy() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ x: 50, y: 50 });
+  const [active, setActive] = useState(false);
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) return;
+    setPos({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    });
+  };
+
+  const spotlight = `radial-gradient(circle 320px at ${pos.x}% ${pos.y}%, black 0%, rgba(0,0,0,0.6) 40%, transparent 75%)`;
+
+  return (
+    <section
+      ref={ref}
+      onMouseMove={handleMove}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      className="relative overflow-hidden py-32 px-6 lg:px-10 cursor-none"
+    >
+      {/* Ambient bottom gradient like reference */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-[radial-gradient(ellipse_at_bottom,_oklch(0.55_0.12_250/0.35),_transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(ellipse_at_bottom_right,_oklch(0.65_0.13_25/0.18),_transparent_60%)]" />
+
+      <div className="relative mx-auto max-w-[1400px]">
+        {/* Base outlined text (dim) */}
+        <h2
+          aria-label="Thanks for stopping by"
+          className="select-none text-center font-display font-semibold leading-[0.9] tracking-tight text-transparent"
+          style={{
+            fontSize: "clamp(3rem, 13vw, 12rem)",
+            WebkitTextStroke: "1px oklch(1 0 0 / 0.12)",
+          }}
+        >
+          THANKS FOR
+          <br />
+          STOPPING BY
+        </h2>
+
+        {/* Illuminated copy revealed by spotlight */}
+        <h2
+          aria-hidden
+          className="pointer-events-none absolute inset-0 select-none text-center font-display font-semibold leading-[0.9] tracking-tight text-transparent transition-opacity duration-300"
+          style={{
+            fontSize: "clamp(3rem, 13vw, 12rem)",
+            WebkitTextStroke: "1px oklch(1 0 0 / 0.85)",
+            WebkitMaskImage: spotlight,
+            maskImage: spotlight,
+            opacity: active ? 1 : 0,
+          }}
+        >
+          THANKS FOR
+          <br />
+          STOPPING BY
+        </h2>
+
+        {/* Glow orb following cursor */}
+        <div
+          className="pointer-events-none absolute h-[420px] w-[420px] rounded-full transition-opacity duration-300"
+          style={{
+            left: `${pos.x}%`,
+            top: `${pos.y}%`,
+            transform: "translate(-50%, -50%)",
+            background:
+              "radial-gradient(circle, oklch(0.85 0.1 240 / 0.25) 0%, transparent 65%)",
+            opacity: active ? 1 : 0,
+            filter: "blur(20px)",
+          }}
+        />
+      </div>
+    </section>
+  );
+}
+
 function Portfolio() {
   return (
     <main className="relative min-h-screen overflow-x-clip">
@@ -650,7 +728,9 @@ function Portfolio() {
       <Testimonials />
       <Tools />
       <Contact />
+      <ThanksForStoppingBy />
       <Footer />
     </main>
   );
 }
+
