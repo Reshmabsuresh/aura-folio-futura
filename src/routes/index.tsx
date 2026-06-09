@@ -216,11 +216,11 @@ function About() {
               <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">My Experiences</div>
               <ul className="mt-5 space-y-5">
                 {[
-                  { when: "2025 — Present", role: "UX Designer & Active Learner", company: "UX Gym by UX Anudeep" },
-                  { when: "2024 — 2025", role: "UI/UX Designer", company: "Protectol Health, UAE" },
-                  { when: "2024 — 2024", role: "UI / Web / Graphics Designer", company: "Brand Cast Solutions, UAE" },
-                  { when: "2022 — 2023", role: "Web / Graphic Designer", company: "Extreme Media, IND" },
-                  { when: "2021 — 2022", role: "Junior Web Designer", company: "Nyeste Venture, IND" },
+                  { when: "2025 , Present (remote)", role: "UX Designer & Active Learner", company: "UX Gym by UX Anudeep" },
+                  { when: "2024 , 2025 (on-site)", role: "UI/UX Designer", company: "Protectol Health, UAE" },
+                  { when: "2024 , 2024 (on-site)", role: "UI / Web / Graphics Designer", company: "Brand Cast Solutions, UAE" },
+                  { when: "2022 , 2023 (on-site)", role: "Web / Graphic Designer", company: "Extreme Media, IND" },
+                  { when: "2021 , 2022 (on-site)", role: "Junior Web Designer", company: "Nyeste Venture, IND" },
                 ].map((e) => (
                   <li key={e.company} className="flex items-start justify-between gap-4">
                     <div>
