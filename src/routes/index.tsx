@@ -480,7 +480,7 @@ function Testimonials() {
 const tools = [
   { name: "Figma", icon: Figma },
   { name: "FigJam", icon: Layout },
-  { name: "Adobe XD", icon: Box },
+  { name: "Sketch", icon: PenTool },
   { name: "Photoshop", icon: ImageIcon },
   { name: "Illustrator", icon: Brush },
   { name: "Miro", icon: Workflow },
@@ -488,8 +488,8 @@ const tools = [
   { name: "Midjourney", icon: Wand2 },
   { name: "Galileo AI", icon: Sparkles },
   { name: "Framer", icon: Palette },
-  { name: "Maze", icon: Eye },
-  { name: "Dovetail", icon: Layers },
+  { name: "Claude AI", icon: Sparkles },
+  { name: "AI Designing", icon: Wand2 },
 ];
 
 function Tools() {
