@@ -172,12 +172,6 @@ function About() {
     "Design Systems", "Interaction Design", "Prototyping", "Visual Design",
     "Figma", "AI-Assisted Design",
   ];
-  const stats = [
-    { v: "48+", l: "Projects shipped" },
-    { v: "3.5", l: "Years experience" },
-    { v: "320", l: "User interviews" },
-    { v: "94", l: "Usability tests run" },
-  ];
   return (
     <section id="about" className="relative py-32 px-6 lg:px-10">
       <div className="mx-auto max-w-7xl">
