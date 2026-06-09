@@ -182,11 +182,19 @@ function About() {
         />
 
         <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <motion.div {...fadeUp} className="lg:col-span-7 glass-strong rounded-3xl p-8 lg:p-10">
-            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Design philosophy</div>
-            <p className="mt-4 font-display text-3xl md:text-4xl leading-[1.15] tracking-[-0.01em]">
-              "Design is not just what it looks like and feels like. <span className="text-gradient">Design is how it works</span>."
-            </p>
+          <motion.div {...fadeUp} className="lg:col-span-7 space-y-6">
+            <div className="glass-strong rounded-3xl p-8 lg:p-10">
+              <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Design philosophy</div>
+              <p className="mt-4 font-display text-3xl md:text-4xl leading-[1.15] tracking-[-0.01em]">
+                "Design is not just what it looks like and feels like. <span className="text-gradient">Design is how it works</span>."
+              </p>
+            </div>
+            <div className="glass-strong rounded-3xl p-8 lg:p-10">
+              <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Who I am</div>
+              <p className="mt-4 text-base md:text-lg leading-relaxed text-foreground/80">
+                "With 3.5 years of experience in UI/UX design, I began my career as a web designer with a strong foundation in HTML, CSS, and JavaScript. I transitioned into UX because I believe great design isn't just about how a product looks, but about how it genuinely serves the user and solves real problems. In my work, my top priorities are the users, stakeholders, and market needs, ensuring each solution is both meaningful and viable. Driven by strong visualization skills and a deep curiosity for the 'why' behind design decisions, I am dedicated to delivering high-quality, impactful products on time."
+              </p>
+            </div>
           </motion.div>
 
           <motion.div {...fadeUp} transition={{ delay: 0.1 }} className="lg:col-span-5 space-y-6">
