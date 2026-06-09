@@ -15,17 +15,19 @@ import { Label } from "@/components/ui/label";
 import heroBg from "@/assets/hero-bg.jpg";
 import portraitAsset from "@/assets/portrait.png.asset.json";
 const portrait = portraitAsset.url;
-import pBotim from "@/assets/project-botim.jpg";
-import pHr from "@/assets/project-hr.jpg";
+import pBotimAsset from "@/assets/project-botim-new.png.asset.json";
+import pFintechAsset from "@/assets/project-fintech.jpg.asset.json";
 import pFitness from "@/assets/project-fitness.jpg";
 import pEcom from "@/assets/project-ecom.jpg";
+const pBotim = pBotimAsset.url;
+const pFintech = pFintechAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Reshma Suresh — UX/UI Designer" },
-      { name: "description", content: "Portfolio of Reshma Suresh — a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs." },
-      { property: "og:title", content: "Reshma Suresh — UX/UI Designer" },
+      { title: "Reshma Suresh , UX/UI Designer" },
+      { name: "description", content: "Portfolio of Reshma Suresh , a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs." },
+      { property: "og:title", content: "Reshma Suresh , UX/UI Designer" },
       { property: "og:description", content: "Award-quality UX work across fintech, HR, health, and e-commerce." },
       { property: "og:type", content: "website" },
     ],
@@ -212,11 +214,11 @@ function About() {
               <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">My Experiences</div>
               <ul className="mt-5 space-y-5">
                 {[
-                  { when: "2025 — Present", role: "UX Designer & Active Learner", company: "UX Gym by UX Anudeep" },
-                  { when: "2024 — 2025", role: "UI/UX Designer", company: "Protectol Health, UAE" },
-                  { when: "2024 — 2024", role: "UI / Web / Graphics Designer", company: "Brand Cast Solutions, UAE" },
-                  { when: "2022 — 2023", role: "Web / Graphic Designer", company: "Extreme Media, IND" },
-                  { when: "2021 — 2022", role: "Junior Web Designer", company: "Nyeste Venture, IND" },
+                  { when: "2025 , Present (remote)", role: "UX Designer & Active Learner", company: "UX Gym by UX Anudeep" },
+                  { when: "2024 , 2025 (on-site)", role: "UI/UX Designer", company: "Protectol Health, UAE" },
+                  { when: "2024 , 2024 (on-site)", role: "UI / Web / Graphics Designer", company: "Brand Cast Solutions, UAE" },
+                  { when: "2022 , 2023 (on-site)", role: "Web / Graphic Designer", company: "Extreme Media, IND" },
+                  { when: "2021 , 2022 (on-site)", role: "Junior Web Designer", company: "Nyeste Venture, IND" },
                 ].map((e) => (
                   <li key={e.company} className="flex items-start justify-between gap-4">
                     <div>
@@ -237,32 +239,30 @@ function About() {
 
 type Project = {
   title: string; category: string; role: string; duration: string;
-  tools: string[]; summary: string; outcome: string; image: string;
+  tools: string[]; summary: string; outcome?: string; image: string;
   span: string; tone: string;
 };
 
 const projects: Project[] = [
   {
-    title: "BOTIM Money Transfer — Trust-first redesign",
+    title: "BOTIM Money Transfer, Trust-first redesign",
     category: "Fintech · Mobile",
-    role: "Lead Product Designer",
-    duration: "6 months",
-    tools: ["Figma", "Maze", "Dovetail"],
-    summary: "Rebuilt the cross-border transfer flow around moments of trust — clarifying fees, exchange rates, and recipient confidence at every step.",
-    outcome: "+38% completion · −22% support tickets",
+    role: "UX Designer",
+    duration: "1 month",
+    tools: ["Figma", "Claude AI", "Leonardo AI"],
+    summary: "Rebuilt the cross-border transfer flow around moments of trust, clarity on every action and recipient confidence at every step.",
     image: pBotim,
     span: "lg:col-span-7 lg:row-span-2",
     tone: "from-violet/30 via-transparent to-cyan/20",
   },
   {
-    title: "HR Management Platform",
-    category: "Enterprise SaaS",
-    role: "Lead UX",
-    duration: "9 months",
-    tools: ["Figma", "FigJam", "Miro"],
-    summary: "Unified payroll, people, and performance into a single composable workspace for 12k+ employees.",
-    outcome: "4.6★ internal NPS · 60% faster onboarding",
-    image: pHr,
+    title: "FinTech Finance Management App",
+    category: "Fintech · Mobile",
+    role: "Product Designer",
+    duration: "3 months",
+    tools: ["Figma", "ChatGPT", "Illustrator"],
+    summary: "A clean, confidence-building finance companion that turns spending, transfers, and budgets into a single calm dashboard, helping users feel in control of every dirham.",
+    image: pFintech,
     span: "lg:col-span-5",
     tone: "from-magenta/30 via-transparent to-violet/20",
   },
@@ -271,21 +271,19 @@ const projects: Project[] = [
     category: "Health · Mobile",
     role: "Product Designer",
     duration: "4 months",
-    tools: ["Figma", "Framer", "Galileo AI"],
+    tools: ["Figma", "ChatGPT", "Illustrator"],
     summary: "An adaptive coaching experience that turns daily metrics into a calm, motivating ritual.",
-    outcome: "2.1× weekly active retention",
     image: pFitness,
     span: "lg:col-span-5",
     tone: "from-cyan/30 via-transparent to-violet/20",
   },
   {
-    title: "E-commerce Experience Redesign",
+    title: "AI Vibe Coding Project, E-commerce Designer Boutique Web App",
     category: "Commerce",
     role: "Senior Designer",
     duration: "5 months",
-    tools: ["Figma", "Hotjar", "ChatGPT"],
+    tools: ["Orchid AI", "Claude AI"],
     summary: "Re-architected discovery and checkout for a premium goods retailer, removing friction in the path to purchase.",
-    outcome: "+27% conversion · +18% AOV",
     image: pEcom,
     span: "lg:col-span-7",
     tone: "from-magenta/30 via-transparent to-cyan/20",
@@ -350,7 +348,7 @@ function Work() {
                         <span key={t} className="text-[11px] glass rounded-full px-2.5 py-1 text-muted-foreground">{t}</span>
                       ))}
                     </div>
-                    <div className="text-sm font-medium text-gradient">{p.outcome}</div>
+                    {p.outcome && <div className="text-sm font-medium text-gradient">{p.outcome}</div>}
                   </div>
                 </div>
               </div>
@@ -380,7 +378,7 @@ function Process() {
         <SectionHeading
           kicker="How I work"
           title={<>A process tuned for <em className="text-gradient not-italic">signal over noise</em>.</>}
-          sub="Eight repeatable moves I adapt to every engagement — from a 2-week sprint to a year-long platform rebuild."
+          sub="Eight repeatable moves I adapt to every engagement , from a 2-week sprint to a year-long platform rebuild."
         />
 
         <div className="mt-16 relative">
@@ -417,7 +415,7 @@ function Process() {
 const testimonials = [
   {
     name: "Mohammed",
-    title: "VP of Product · Brand Cast Solutions",
+    title: "VP of Product · Brand Cast Solutions, UAE",
     quote: "Reshma turned a tangled transfer flow into something our team is genuinely proud of. Her research instinct is rare.",
     initials: "MO", tint: "from-violet/40 to-magenta/30",
   },
@@ -480,7 +478,7 @@ function Testimonials() {
 const tools = [
   { name: "Figma", icon: Figma },
   { name: "FigJam", icon: Layout },
-  { name: "Adobe XD", icon: Box },
+  { name: "Sketch", icon: PenTool },
   { name: "Photoshop", icon: ImageIcon },
   { name: "Illustrator", icon: Brush },
   { name: "Miro", icon: Workflow },
@@ -488,8 +486,8 @@ const tools = [
   { name: "Midjourney", icon: Wand2 },
   { name: "Galileo AI", icon: Sparkles },
   { name: "Framer", icon: Palette },
-  { name: "Maze", icon: Eye },
-  { name: "Dovetail", icon: Layers },
+  { name: "Claude AI", icon: Sparkles },
+  { name: "AI Designing", icon: Wand2 },
 ];
 
 function Tools() {
@@ -499,7 +497,7 @@ function Tools() {
         <SectionHeading
           kicker="Tools & stack"
           title={<>Crafted with a <em className="text-gradient not-italic">modern toolkit</em>.</>}
-          sub="From classic design tools to AI-native workflows — chosen pragmatically, never for novelty's sake."
+          sub="From classic design tools to AI-native workflows , chosen pragmatically, never for novelty's sake."
         />
         <div className="mt-16 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
           {tools.map((t, i) => (
@@ -538,30 +536,35 @@ function Contact() {
                 Let's create <em className="text-gradient not-italic">meaningful digital experiences</em> together.
               </motion.h2>
               <motion.p {...fadeUp} transition={{ delay: 0.15 }} className="mt-6 text-muted-foreground max-w-md">
-                Open to senior product design roles, fractional engagements, and ambitious 0→1 collaborations.
+                Open to Product / UI/UX / AUI Design roles, Full-time / Fractional engagements, and ambitious 0→1 collaborations.
               </motion.p>
 
               <div className="mt-10 space-y-4">
                 {[
-                  { icon: Mail, label: "hello@reshmasuresh.design" },
-                  { icon: MapPin, label: "Dubai, UAE · remote-friendly" },
+                  { icon: Mail, label: "breshmasuresh@gmail.com", href: "mailto:breshmasuresh@gmail.com" },
+                  { icon: Mail, label: "hello@reshmasuresh.design", href: "mailto:breshmasuresh@gmail.com" },
+                  { icon: MapPin, label: "Dubai, UAE", href: null as string | null },
                 ].map((r) => (
                   <div key={r.label} className="flex items-center gap-3 text-sm">
                     <div className="glass h-10 w-10 rounded-xl flex items-center justify-center text-violet">
                       <r.icon className="h-4 w-4" />
                     </div>
-                    <span>{r.label}</span>
+                    {r.href ? (
+                      <a href={r.href} className="hover:text-foreground transition">{r.label}</a>
+                    ) : (
+                      <span>{r.label}</span>
+                    )}
                   </div>
                 ))}
               </div>
 
               <div className="mt-8 flex flex-wrap gap-2">
                 {[
-                  { icon: Linkedin, label: "LinkedIn" },
-                  { icon: Dribbble, label: "Dribbble" },
-                  { icon: Box, label: "Behance" },
+                  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/reshma-suresh12/" },
+                  { icon: Box, label: "Behance", href: "https://www.behance.net/reshmasuresh4" },
+                  { icon: Dribbble, label: "Dribbble", href: "https://dribbble.com/Reshmasuresh" },
                 ].map((s) => (
-                  <a key={s.label} href="#" className="glass grad-border rounded-full px-4 py-2 text-sm inline-flex items-center gap-2 hover:bg-white/10 transition">
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="glass grad-border rounded-full px-4 py-2 text-sm inline-flex items-center gap-2 hover:bg-white/10 transition">
                     <s.icon className="h-3.5 w-3.5" /> {s.label}
                   </a>
                 ))}
@@ -612,18 +615,9 @@ function Footer() {
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-violet shadow-[0_0_12px_var(--violet)]" />
             <span className="font-medium">Reshma Suresh</span>
-            <span className="text-muted-foreground">— UX/UI Designer</span>
+            <span className="text-muted-foreground">, UX/UI Designer</span>
           </div>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition">LinkedIn</a>
-            <a href="#" className="hover:text-foreground transition">Dribbble</a>
-            <a href="#" className="hover:text-foreground transition">Behance</a>
-            <a href="mailto:hello@reshmasuresh.design" className="hover:text-foreground transition">Email</a>
-          </div>
-        </div>
-        <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© 2026 Reshma Suresh. All rights reserved.</div>
-          <div className="italic">Designed with curiosity and empathy.</div>
+          <div className="text-xs text-muted-foreground">© 2026 Reshma Suresh. All rights reserved.</div>
         </div>
       </div>
     </footer>
