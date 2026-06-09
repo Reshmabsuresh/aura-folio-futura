@@ -417,7 +417,7 @@ function Process() {
 const testimonials = [
   {
     name: "Mohammed",
-    title: "VP of Product · Brand Cast Solutions",
+    title: "VP of Product · Brand Cast Solutions, UAE",
     quote: "Reshma turned a tangled transfer flow into something our team is genuinely proud of. Her research instinct is rare.",
     initials: "MO", tint: "from-violet/40 to-magenta/30",
   },
