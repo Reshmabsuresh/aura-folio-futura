@@ -422,16 +422,16 @@ const testimonials = [
     initials: "MO", tint: "from-violet/40 to-magenta/30",
   },
   {
-    name: "Daniel Park",
-    title: "VP Engineering · Northwind HR",
-    quote: "She designs like an engineer thinks — every state accounted for, every edge case named. Shipping was effortless.",
-    initials: "DP", tint: "from-cyan/40 to-violet/30",
+    name: "Vipin Kumar",
+    title: "CEO · Extrememedia, IND",
+    quote: "Reshma's design transformed our user experience and directly drove a 28% jump in conversion rates.",
+    initials: "VK", tint: "from-cyan/40 to-violet/30",
   },
   {
-    name: "Priya Menon",
-    title: "Founder · Pulse Health",
-    quote: "Calm, curious, decisive. Reshma raised the bar for our entire product org in a single quarter.",
-    initials: "PM", tint: "from-magenta/40 to-cyan/30",
+    name: "Shaiju Hamza",
+    title: "CEO · Stralog Alliance, UAE",
+    quote: "Reshma delivers flawless visuals. She designed our stunning website and graphics while perfectly addressing our business and user pain points.",
+    initials: "SH", tint: "from-magenta/40 to-cyan/30",
   },
 ];
 
