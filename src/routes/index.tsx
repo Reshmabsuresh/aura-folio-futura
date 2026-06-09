@@ -90,7 +90,7 @@ function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
-          Available for select projects · Q2 2026
+          Available to new opportunities
         </motion.div>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
@@ -105,7 +105,7 @@ function Hero() {
               behind great products.
             </motion.h1>
             <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              I'm <span className="text-foreground">Reshma Suresh</span> — a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs across fintech, enterprise, and health.
+              I'm <span className="text-foreground">Reshma Suresh</span>, a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs across different platforms.
             </motion.p>
             <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.25 }} className="mt-10 flex flex-wrap items-center gap-3">
               <a href="#work" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90 transition glow">
@@ -141,12 +141,6 @@ function Hero() {
         <motion.div {...fadeUp} transition={{ duration: 0.8, delay: 0.4 }} className="mt-24 flex flex-wrap items-center justify-between gap-8 text-xs uppercase tracking-[0.25em] text-muted-foreground">
           <div className="flex items-center gap-2">
             <ArrowDown className="h-3 w-3 animate-bounce" /> Scroll to explore
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <span>BOTIM · Fintech</span>
-            <span>Enterprise HR</span>
-            <span>Health · Fitness</span>
-            <span>Commerce</span>
           </div>
         </motion.div>
       </div>
@@ -307,7 +301,7 @@ function Work() {
         <div className="flex items-end justify-between gap-10 flex-wrap">
           <SectionHeading
             kicker="Featured work"
-            title={<>Selected case studies, <em className="text-gradient not-italic">2023 – 2026</em>.</>}
+            title={<>Selected <em className="text-gradient not-italic">project case studies</em>.</>}
           />
           <motion.a {...fadeUp} href="#contact" className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5">
             Request full case studies <ArrowRight className="h-4 w-4" />
