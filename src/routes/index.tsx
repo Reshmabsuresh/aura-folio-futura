@@ -651,6 +651,7 @@ function Footer() {
             <span className="h-2 w-2 rounded-full bg-violet shadow-[0_0_12px_var(--violet)]" />
             <span className="font-medium">Reshma Suresh</span>
             <span className="text-muted-foreground">, UX/UI Designer</span>
+
           </div>
           <div className="text-xs text-muted-foreground">© 2026 Reshma Suresh. All rights reserved.</div>
         </div>
