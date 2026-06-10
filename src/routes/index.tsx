@@ -488,18 +488,19 @@ function Testimonials() {
   );
 }
 
-const tools = [
+type Tool = { name: string; icon?: typeof Figma; image?: string };
+const tools: Tool[] = [
   { name: "Figma", icon: Figma },
   { name: "FigJam", icon: Layout },
-  { name: "Sketch", icon: PenTool },
-  { name: "Photoshop", icon: ImageIcon },
-  { name: "Illustrator", icon: Brush },
-  { name: "Miro", icon: Workflow },
-  { name: "ChatGPT", icon: Bot },
-  { name: "Midjourney", icon: Wand2 },
-  { name: "Galileo AI", icon: Sparkles },
-  { name: "Framer", icon: Palette },
-  { name: "Claude AI", icon: Sparkles },
+  { name: "Sketch", image: tSketch.url },
+  { name: "Photoshop", image: tPhotoshop.url },
+  { name: "Illustrator", image: tIllustrator.url },
+  { name: "Miro", image: tMiro.url },
+  { name: "ChatGPT", image: tChatgpt.url },
+  { name: "Midjourney", image: tMidjourney.url },
+  { name: "Google Stitch", image: tStitch.url },
+  { name: "Framer", image: tFramer.url },
+  { name: "Claude AI", image: tClaude.url },
   { name: "AI Designing", icon: Wand2 },
 ];
 
@@ -522,8 +523,12 @@ function Tools() {
               transition={{ duration: 0.5, delay: i * 0.04 }}
               className="group glass-strong grad-border rounded-2xl p-5 aspect-square flex flex-col items-center justify-center gap-3 hover:bg-white/[0.06] transition"
             >
-              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center text-foreground/90 group-hover:text-violet transition">
-                <t.icon className="h-6 w-6" />
+              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition">
+                {t.image ? (
+                  <img src={t.image} alt={t.name} className="h-9 w-9 object-contain" loading="lazy" />
+                ) : t.icon ? (
+                  <t.icon className="h-6 w-6" />
+                ) : null}
               </div>
               <div className="text-xs font-medium text-center">{t.name}</div>
             </motion.div>
