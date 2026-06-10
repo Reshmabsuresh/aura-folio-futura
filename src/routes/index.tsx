@@ -16,7 +16,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import portraitAsset from "@/assets/portrait.png.asset.json";
 const portrait = portraitAsset.url;
 import pBotimAsset from "@/assets/project-botim-new.png.asset.json";
-import pFintechAsset from "@/assets/project-fintech.jpg.asset.json";
+import pFintechAsset from "@/assets/project-fintech-new.png.asset.json";
 import pFitnessAsset from "@/assets/project-fitness-new.jpg.asset.json";
 import pEcomAsset from "@/assets/project-vibe-ecom.png.asset.json";
 const pBotim = pBotimAsset.url;
@@ -24,23 +24,24 @@ const pFintech = pFintechAsset.url;
 const pFitness = pFitnessAsset.url;
 const pEcom = pEcomAsset.url;
 
+import tChatgpt from "@/assets/tools-svg/chatgpt.svg?raw";
+import tClaude from "@/assets/tools-svg/claude.svg?raw";
+import tFramer from "@/assets/tools-svg/framer.svg?raw";
+import tIllustrator from "@/assets/tools-svg/illustrator.svg?raw";
+import tMidjourney from "@/assets/tools-svg/midjourney.svg?raw";
+import tMiro from "@/assets/tools-svg/miro.svg?raw";
+import tPhotoshop from "@/assets/tools-svg/photoshop.svg?raw";
+import tStitch from "@/assets/tools-svg/stitch.svg?raw";
+import tSketch from "@/assets/tools-svg/sketch.svg?raw";
 
-import tChatgpt from "@/assets/tools/chatgpt.png.asset.json";
-import tClaude from "@/assets/tools/claude.png.asset.json";
-import tFramer from "@/assets/tools/framer.png.asset.json";
-import tIllustrator from "@/assets/tools/illustrator.png.asset.json";
-import tMidjourney from "@/assets/tools/midjourney.png.asset.json";
-import tMiro from "@/assets/tools/miro.png.asset.json";
-import tPhotoshop from "@/assets/tools/photoshop.png.asset.json";
-import tStitch from "@/assets/tools/stitch.png.asset.json";
-import tSketch from "@/assets/tools/sketch.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Reshma Suresh , UX/UI Designer" },
-      { name: "description", content: "Portfolio of Reshma Suresh , a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs." },
-      { property: "og:title", content: "Reshma Suresh , UX/UI Designer" },
+      { title: "Reshma Suresh, UX/UI Designer" },
+      { name: "description", content: "Portfolio of Reshma Suresh, a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs." },
+      { property: "og:title", content: "Reshma Suresh, UX/UI Designer" },
+
       { property: "og:description", content: "Award-quality UX work across fintech, HR, health, and e-commerce." },
       { property: "og:type", content: "website" },
     ],
@@ -139,7 +140,7 @@ function Hero() {
               <div className="absolute bottom-4 left-4 right-4 glass rounded-2xl p-4 flex items-center justify-between">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Based in</div>
-                  <div className="text-sm font-medium">Dubai · UAE</div>
+                  <div className="text-sm font-medium">Dubai, United Arab Emirates</div>
                 </div>
                 <div className="text-right">
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Experience</div>
@@ -265,7 +266,7 @@ const projects: Project[] = [
     tools: ["Figma", "Claude AI", "Leonardo AI"],
     summary: "Rebuilt the cross-border transfer flow around moments of trust, clarity on every action and recipient confidence at every step.",
     image: pBotim,
-    span: "lg:col-span-7 lg:row-span-2",
+    span: "lg:col-span-6",
     tone: "from-violet/30 via-transparent to-cyan/20",
   },
   {
@@ -276,7 +277,8 @@ const projects: Project[] = [
     tools: ["Figma", "ChatGPT", "Illustrator"],
     summary: "A clean, confidence-building finance companion that turns spending, transfers, and budgets into a single calm dashboard, helping users feel in control of every dirham.",
     image: pFintech,
-    span: "lg:col-span-5",
+    span: "lg:col-span-6",
+
     tone: "from-magenta/30 via-transparent to-violet/20",
   },
   {
@@ -287,7 +289,7 @@ const projects: Project[] = [
     tools: ["Figma", "ChatGPT", "Illustrator"],
     summary: "An adaptive coaching experience that turns daily metrics into a calm, motivating ritual.",
     image: pFitness,
-    span: "lg:col-span-5",
+    span: "lg:col-span-6",
     tone: "from-cyan/30 via-transparent to-violet/20",
   },
   {
@@ -298,7 +300,7 @@ const projects: Project[] = [
     tools: ["Orchid AI", "Claude AI"],
     summary: "Re-architected discovery and checkout for a premium goods retailer, removing friction in the path to purchase.",
     image: pEcom,
-    span: "lg:col-span-7",
+    span: "lg:col-span-6",
     tone: "from-magenta/30 via-transparent to-cyan/20",
   },
 ];
@@ -488,19 +490,19 @@ function Testimonials() {
   );
 }
 
-type Tool = { name: string; icon?: typeof Figma; image?: string };
+type Tool = { name: string; icon?: typeof Figma; svg?: string };
 const tools: Tool[] = [
   { name: "Figma", icon: Figma },
   { name: "FigJam", icon: Layout },
-  { name: "Sketch", image: tSketch.url },
-  { name: "Photoshop", image: tPhotoshop.url },
-  { name: "Illustrator", image: tIllustrator.url },
-  { name: "Miro", image: tMiro.url },
-  { name: "ChatGPT", image: tChatgpt.url },
-  { name: "Midjourney", image: tMidjourney.url },
-  { name: "Google Stitch", image: tStitch.url },
-  { name: "Framer", image: tFramer.url },
-  { name: "Claude AI", image: tClaude.url },
+  { name: "Sketch", svg: tSketch },
+  { name: "Photoshop", svg: tPhotoshop },
+  { name: "Illustrator", svg: tIllustrator },
+  { name: "Miro", svg: tMiro },
+  { name: "ChatGPT", svg: tChatgpt },
+  { name: "Midjourney", svg: tMidjourney },
+  { name: "Google Stitch", svg: tStitch },
+  { name: "Framer", svg: tFramer },
+  { name: "Claude AI", svg: tClaude },
   { name: "AI Designing", icon: Wand2 },
 ];
 
@@ -523,9 +525,12 @@ function Tools() {
               transition={{ duration: 0.5, delay: i * 0.04 }}
               className="group glass-strong grad-border rounded-2xl p-5 aspect-square flex flex-col items-center justify-center gap-3 hover:bg-white/[0.06] transition"
             >
-              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition">
-                {t.image ? (
-                  <img src={t.image} alt={t.name} className="h-9 w-9 object-contain" loading="lazy" />
+              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition-colors duration-300">
+                {t.svg ? (
+                  <span
+                    className="h-6 w-6 [&_svg]:h-full [&_svg]:w-full inline-flex"
+                    dangerouslySetInnerHTML={{ __html: t.svg }}
+                  />
                 ) : t.icon ? (
                   <t.icon className="h-6 w-6" />
                 ) : null}
@@ -538,6 +543,7 @@ function Tools() {
     </section>
   );
 }
+
 
 function Contact() {
   return (
@@ -560,7 +566,7 @@ function Contact() {
               <div className="mt-10 space-y-4">
                 {[
                   { icon: Mail, label: "breshmasuresh@gmail.com", href: "mailto:breshmasuresh@gmail.com" },
-                  { icon: MapPin, label: "Dubai, UAE", href: null as string | null },
+                  { icon: MapPin, label: "Dubai, United Arab Emirates", href: null as string | null },
                 ].map((r) => (
                   <div key={r.label} className="flex items-center gap-3 text-sm">
                     <div className="glass h-10 w-10 rounded-xl flex items-center justify-center text-violet">
@@ -643,9 +649,9 @@ function Footer() {
         <div className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm">
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-violet shadow-[0_0_12px_var(--violet)]" />
-            <span className="font-medium">Reshma Suresh</span>
-            <span className="text-muted-foreground">, UX/UI Designer</span>
+            <span><span className="font-medium">Reshma Suresh</span><span className="text-muted-foreground">, UX/UI Designer</span></span>
           </div>
+
           <div className="text-xs text-muted-foreground">© 2026 Reshma Suresh. All rights reserved.</div>
         </div>
       </div>
