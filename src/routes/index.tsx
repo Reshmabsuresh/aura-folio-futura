@@ -272,7 +272,7 @@ const projects: Project[] = [
     title: "FinTech Finance Management App",
     category: "Fintech · Mobile",
     role: "Product Designer",
-    duration: "3 months",
+    duration: "2 months",
     tools: ["Figma", "ChatGPT", "Illustrator"],
     summary: "A clean, confidence-building finance companion that turns spending, transfers, and budgets into a single calm dashboard, helping users feel in control of every dirham.",
     image: pFintech,
