@@ -560,7 +560,6 @@ function Contact() {
               <div className="mt-10 space-y-4">
                 {[
                   { icon: Mail, label: "breshmasuresh@gmail.com", href: "mailto:breshmasuresh@gmail.com" },
-                  { icon: Mail, label: "hello@reshmasuresh.design", href: "mailto:breshmasuresh@gmail.com" },
                   { icon: MapPin, label: "Dubai, UAE", href: null as string | null },
                 ].map((r) => (
                   <div key={r.label} className="flex items-center gap-3 text-sm">
