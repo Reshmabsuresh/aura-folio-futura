@@ -488,19 +488,19 @@ function Testimonials() {
   );
 }
 
-type Tool = { name: string; icon?: typeof Figma; image?: string };
+type Tool = { name: string; icon?: typeof Figma; svg?: string };
 const tools: Tool[] = [
   { name: "Figma", icon: Figma },
   { name: "FigJam", icon: Layout },
-  { name: "Sketch", image: tSketch.url },
-  { name: "Photoshop", image: tPhotoshop.url },
-  { name: "Illustrator", image: tIllustrator.url },
-  { name: "Miro", image: tMiro.url },
-  { name: "ChatGPT", image: tChatgpt.url },
-  { name: "Midjourney", image: tMidjourney.url },
-  { name: "Google Stitch", image: tStitch.url },
-  { name: "Framer", image: tFramer.url },
-  { name: "Claude AI", image: tClaude.url },
+  { name: "Sketch", svg: tSketch },
+  { name: "Photoshop", svg: tPhotoshop },
+  { name: "Illustrator", svg: tIllustrator },
+  { name: "Miro", svg: tMiro },
+  { name: "ChatGPT", svg: tChatgpt },
+  { name: "Midjourney", svg: tMidjourney },
+  { name: "Google Stitch", svg: tStitch },
+  { name: "Framer", svg: tFramer },
+  { name: "Claude AI", svg: tClaude },
   { name: "AI Designing", icon: Wand2 },
 ];
 
@@ -523,9 +523,12 @@ function Tools() {
               transition={{ duration: 0.5, delay: i * 0.04 }}
               className="group glass-strong grad-border rounded-2xl p-5 aspect-square flex flex-col items-center justify-center gap-3 hover:bg-white/[0.06] transition"
             >
-              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition">
-                {t.image ? (
-                  <img src={t.image} alt={t.name} className="h-9 w-9 object-contain" loading="lazy" />
+              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition-colors duration-300">
+                {t.svg ? (
+                  <span
+                    className="h-6 w-6 [&_svg]:h-full [&_svg]:w-full inline-flex"
+                    dangerouslySetInnerHTML={{ __html: t.svg }}
+                  />
                 ) : t.icon ? (
                   <t.icon className="h-6 w-6" />
                 ) : null}
@@ -538,6 +541,7 @@ function Tools() {
     </section>
   );
 }
+
 
 function Contact() {
   return (
