@@ -16,7 +16,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import portraitAsset from "@/assets/portrait.png.asset.json";
 const portrait = portraitAsset.url;
 import pBotimAsset from "@/assets/project-botim-new.png.asset.json";
-import pFintechAsset from "@/assets/project-fintech.jpg.asset.json";
+import pFintechAsset from "@/assets/project-fintech-new.png.asset.json";
 import pFitnessAsset from "@/assets/project-fitness-new.jpg.asset.json";
 import pEcomAsset from "@/assets/project-vibe-ecom.png.asset.json";
 const pBotim = pBotimAsset.url;
@@ -24,16 +24,16 @@ const pFintech = pFintechAsset.url;
 const pFitness = pFitnessAsset.url;
 const pEcom = pEcomAsset.url;
 
+import tChatgpt from "@/assets/tools-svg/chatgpt.svg?raw";
+import tClaude from "@/assets/tools-svg/claude.svg?raw";
+import tFramer from "@/assets/tools-svg/framer.svg?raw";
+import tIllustrator from "@/assets/tools-svg/illustrator.svg?raw";
+import tMidjourney from "@/assets/tools-svg/midjourney.svg?raw";
+import tMiro from "@/assets/tools-svg/miro.svg?raw";
+import tPhotoshop from "@/assets/tools-svg/photoshop.svg?raw";
+import tStitch from "@/assets/tools-svg/stitch.svg?raw";
+import tSketch from "@/assets/tools-svg/sketch.svg?raw";
 
-import tChatgpt from "@/assets/tools/chatgpt.png.asset.json";
-import tClaude from "@/assets/tools/claude.png.asset.json";
-import tFramer from "@/assets/tools/framer.png.asset.json";
-import tIllustrator from "@/assets/tools/illustrator.png.asset.json";
-import tMidjourney from "@/assets/tools/midjourney.png.asset.json";
-import tMiro from "@/assets/tools/miro.png.asset.json";
-import tPhotoshop from "@/assets/tools/photoshop.png.asset.json";
-import tStitch from "@/assets/tools/stitch.png.asset.json";
-import tSketch from "@/assets/tools/sketch.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
