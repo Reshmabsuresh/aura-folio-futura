@@ -266,7 +266,7 @@ const projects: Project[] = [
     tools: ["Figma", "Claude AI", "Leonardo AI"],
     summary: "Rebuilt the cross-border transfer flow around moments of trust, clarity on every action and recipient confidence at every step.",
     image: pBotim,
-    span: "lg:col-span-7 lg:row-span-2",
+    span: "lg:col-span-6",
     tone: "from-violet/30 via-transparent to-cyan/20",
   },
   {
