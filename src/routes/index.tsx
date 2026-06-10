@@ -649,10 +649,9 @@ function Footer() {
         <div className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm">
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-violet shadow-[0_0_12px_var(--violet)]" />
-            <span className="font-medium">Reshma Suresh</span>
-            <span className="text-muted-foreground">, UX/UI Designer</span>
-
+            <span><span className="font-medium">Reshma Suresh</span><span className="text-muted-foreground">, UX/UI Designer</span></span>
           </div>
+
           <div className="text-xs text-muted-foreground">© 2026 Reshma Suresh. All rights reserved.</div>
         </div>
       </div>
