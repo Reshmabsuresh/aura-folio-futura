@@ -355,7 +355,7 @@ function Work() {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-prose">
                     {p.summary}
                   </p>
-                  <div className="mt-auto pt-6 flex items-center justify-between gap-4 flex-wrap">
+                  <div className="mt-5 pt-1 flex items-center justify-between gap-4 flex-wrap">
                     <div className="flex flex-wrap gap-1.5">
                       {p.tools.map((t) => (
                         <span key={t} className="text-[11px] glass rounded-full px-2.5 py-1 text-muted-foreground">{t}</span>
