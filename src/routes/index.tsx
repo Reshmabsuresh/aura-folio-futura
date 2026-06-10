@@ -4,7 +4,7 @@ import { useRef } from "react";
 import {
   ArrowRight, ArrowDown, Mail, MapPin, Linkedin, Dribbble,
   Sparkles, Compass, Search, Lightbulb, PenTool, Layers, FlaskConical, Repeat, Rocket,
-  Figma, Palette, Bot, Wand2, Brush, Layout, Image as ImageIcon, Eye, Workflow, Box,
+  Figma, Wand2, Layout, Box,
 } from "lucide-react";
 import { GridBackdrop, Particles } from "@/components/portfolio/Noise";
 import { Button } from "@/components/ui/button";
@@ -17,10 +17,23 @@ import portraitAsset from "@/assets/portrait.png.asset.json";
 const portrait = portraitAsset.url;
 import pBotimAsset from "@/assets/project-botim-new.png.asset.json";
 import pFintechAsset from "@/assets/project-fintech.jpg.asset.json";
-import pFitness from "@/assets/project-fitness.jpg";
-import pEcom from "@/assets/project-ecom.jpg";
+import pFitnessAsset from "@/assets/project-fitness-new.jpg.asset.json";
+import pEcomAsset from "@/assets/project-vibe-ecom.png.asset.json";
 const pBotim = pBotimAsset.url;
 const pFintech = pFintechAsset.url;
+const pFitness = pFitnessAsset.url;
+const pEcom = pEcomAsset.url;
+
+
+import tChatgpt from "@/assets/tools/chatgpt.png.asset.json";
+import tClaude from "@/assets/tools/claude.png.asset.json";
+import tFramer from "@/assets/tools/framer.png.asset.json";
+import tIllustrator from "@/assets/tools/illustrator.png.asset.json";
+import tMidjourney from "@/assets/tools/midjourney.png.asset.json";
+import tMiro from "@/assets/tools/miro.png.asset.json";
+import tPhotoshop from "@/assets/tools/photoshop.png.asset.json";
+import tStitch from "@/assets/tools/stitch.png.asset.json";
+import tSketch from "@/assets/tools/sketch.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -113,8 +126,8 @@ function Hero() {
               <a href="#work" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90 transition glow">
                 View my work <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#contact" className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium hover:bg-white/10 transition">
-                Contact me
+              <a href="mailto:breshmasuresh@gmail.com" className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium hover:bg-white/10 transition">
+                Send an email
               </a>
             </motion.div>
           </div>
@@ -259,7 +272,7 @@ const projects: Project[] = [
     title: "FinTech Finance Management App",
     category: "Fintech · Mobile",
     role: "Product Designer",
-    duration: "3 months",
+    duration: "2 months",
     tools: ["Figma", "ChatGPT", "Illustrator"],
     summary: "A clean, confidence-building finance companion that turns spending, transfers, and budgets into a single calm dashboard, helping users feel in control of every dirham.",
     image: pFintech,
@@ -270,7 +283,7 @@ const projects: Project[] = [
     title: "Fitness Tracking App",
     category: "Health · Mobile",
     role: "Product Designer",
-    duration: "4 months",
+    duration: "2 months",
     tools: ["Figma", "ChatGPT", "Illustrator"],
     summary: "An adaptive coaching experience that turns daily metrics into a calm, motivating ritual.",
     image: pFitness,
@@ -342,7 +355,7 @@ function Work() {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-prose">
                     {p.summary}
                   </p>
-                  <div className="mt-auto pt-6 flex items-center justify-between gap-4 flex-wrap">
+                  <div className="mt-5 pt-1 flex items-center justify-between gap-4 flex-wrap">
                     <div className="flex flex-wrap gap-1.5">
                       {p.tools.map((t) => (
                         <span key={t} className="text-[11px] glass rounded-full px-2.5 py-1 text-muted-foreground">{t}</span>
@@ -475,18 +488,19 @@ function Testimonials() {
   );
 }
 
-const tools = [
+type Tool = { name: string; icon?: typeof Figma; image?: string };
+const tools: Tool[] = [
   { name: "Figma", icon: Figma },
   { name: "FigJam", icon: Layout },
-  { name: "Sketch", icon: PenTool },
-  { name: "Photoshop", icon: ImageIcon },
-  { name: "Illustrator", icon: Brush },
-  { name: "Miro", icon: Workflow },
-  { name: "ChatGPT", icon: Bot },
-  { name: "Midjourney", icon: Wand2 },
-  { name: "Galileo AI", icon: Sparkles },
-  { name: "Framer", icon: Palette },
-  { name: "Claude AI", icon: Sparkles },
+  { name: "Sketch", image: tSketch.url },
+  { name: "Photoshop", image: tPhotoshop.url },
+  { name: "Illustrator", image: tIllustrator.url },
+  { name: "Miro", image: tMiro.url },
+  { name: "ChatGPT", image: tChatgpt.url },
+  { name: "Midjourney", image: tMidjourney.url },
+  { name: "Google Stitch", image: tStitch.url },
+  { name: "Framer", image: tFramer.url },
+  { name: "Claude AI", image: tClaude.url },
   { name: "AI Designing", icon: Wand2 },
 ];
 
@@ -509,8 +523,12 @@ function Tools() {
               transition={{ duration: 0.5, delay: i * 0.04 }}
               className="group glass-strong grad-border rounded-2xl p-5 aspect-square flex flex-col items-center justify-center gap-3 hover:bg-white/[0.06] transition"
             >
-              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center text-foreground/90 group-hover:text-violet transition">
-                <t.icon className="h-6 w-6" />
+              <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition">
+                {t.image ? (
+                  <img src={t.image} alt={t.name} className="h-9 w-9 object-contain" loading="lazy" />
+                ) : t.icon ? (
+                  <t.icon className="h-6 w-6" />
+                ) : null}
               </div>
               <div className="text-xs font-medium text-center">{t.name}</div>
             </motion.div>
@@ -542,7 +560,6 @@ function Contact() {
               <div className="mt-10 space-y-4">
                 {[
                   { icon: Mail, label: "breshmasuresh@gmail.com", href: "mailto:breshmasuresh@gmail.com" },
-                  { icon: Mail, label: "hello@reshmasuresh.design", href: "mailto:breshmasuresh@gmail.com" },
                   { icon: MapPin, label: "Dubai, UAE", href: null as string | null },
                 ].map((r) => (
                   <div key={r.label} className="flex items-center gap-3 text-sm">
@@ -574,26 +591,38 @@ function Contact() {
             <motion.form
               {...fadeUp}
               transition={{ delay: 0.2 }}
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={(e) => {
+                e.preventDefault();
+                const fd = new FormData(e.currentTarget);
+                const name = String(fd.get("name") || "");
+                const email = String(fd.get("email") || "");
+                const type = String(fd.get("type") || "");
+                const msg = String(fd.get("msg") || "");
+                const subject = encodeURIComponent(`New project inquiry from ${name || "website"}${type ? ` , ${type}` : ""}`);
+                const body = encodeURIComponent(
+                  `Name: ${name}\nEmail: ${email}\nProject type: ${type}\n\n${msg}`
+                );
+                window.location.href = `mailto:breshmasuresh@gmail.com?subject=${subject}&body=${body}`;
+              }}
               className="lg:col-span-6 glass-strong rounded-3xl p-6 md:p-8 space-y-5"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Name</Label>
-                  <Input id="name" placeholder="Your name" className="bg-white/5 border-white/10 h-11" />
+                  <Input id="name" name="name" required placeholder="Your name" className="bg-white/5 border-white/10 h-11" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Email</Label>
-                  <Input id="email" type="email" placeholder="you@company.com" className="bg-white/5 border-white/10 h-11" />
+                  <Input id="email" name="email" type="email" required placeholder="you@company.com" className="bg-white/5 border-white/10 h-11" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="type" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Project type</Label>
-                <Input id="type" placeholder="e.g. Mobile app redesign" className="bg-white/5 border-white/10 h-11" />
+                <Input id="type" name="type" placeholder="e.g. Mobile app redesign" className="bg-white/5 border-white/10 h-11" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="msg" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Message</Label>
-                <Textarea id="msg" placeholder="Tell me about the problem you're solving…" className="bg-white/5 border-white/10 min-h-36" />
+                <Textarea id="msg" name="msg" required placeholder="Tell me about the problem you're solving…" className="bg-white/5 border-white/10 min-h-36" />
               </div>
               <Button type="submit" className="w-full h-12 rounded-full bg-foreground text-background hover:opacity-90 glow">
                 Send message <ArrowRight className="ml-2 h-4 w-4" />
