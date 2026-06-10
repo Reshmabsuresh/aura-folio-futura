@@ -17,10 +17,23 @@ import portraitAsset from "@/assets/portrait.png.asset.json";
 const portrait = portraitAsset.url;
 import pBotimAsset from "@/assets/project-botim-new.png.asset.json";
 import pFintechAsset from "@/assets/project-fintech.jpg.asset.json";
-import pFitness from "@/assets/project-fitness.jpg";
-import pEcom from "@/assets/project-ecom.jpg";
+import pFitnessAsset from "@/assets/project-fitness-new.jpg.asset.json";
+import pEcomAsset from "@/assets/project-vibe-ecom.png.asset.json";
 const pBotim = pBotimAsset.url;
 const pFintech = pFintechAsset.url;
+const pFitness = pFitnessAsset.url;
+const pEcom = pEcomAsset.url;
+
+import toolFigmaIcon from "lucide-react";
+import tChatgpt from "@/assets/tools/chatgpt.png.asset.json";
+import tClaude from "@/assets/tools/claude.png.asset.json";
+import tFramer from "@/assets/tools/framer.png.asset.json";
+import tIllustrator from "@/assets/tools/illustrator.png.asset.json";
+import tMidjourney from "@/assets/tools/midjourney.png.asset.json";
+import tMiro from "@/assets/tools/miro.png.asset.json";
+import tPhotoshop from "@/assets/tools/photoshop.png.asset.json";
+import tStitch from "@/assets/tools/stitch.png.asset.json";
+import tSketch from "@/assets/tools/sketch.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
