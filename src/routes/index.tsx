@@ -277,7 +277,8 @@ const projects: Project[] = [
     tools: ["Figma", "ChatGPT", "Illustrator"],
     summary: "A clean, confidence-building finance companion that turns spending, transfers, and budgets into a single calm dashboard, helping users feel in control of every dirham.",
     image: pFintech,
-    span: "lg:col-span-5",
+    span: "lg:col-span-6",
+
     tone: "from-magenta/30 via-transparent to-violet/20",
   },
   {
