@@ -24,7 +24,7 @@ const pFintech = pFintechAsset.url;
 const pFitness = pFitnessAsset.url;
 const pEcom = pEcomAsset.url;
 
-import toolFigmaIcon from "lucide-react";
+
 import tChatgpt from "@/assets/tools/chatgpt.png.asset.json";
 import tClaude from "@/assets/tools/claude.png.asset.json";
 import tFramer from "@/assets/tools/framer.png.asset.json";
