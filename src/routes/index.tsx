@@ -591,26 +591,38 @@ function Contact() {
             <motion.form
               {...fadeUp}
               transition={{ delay: 0.2 }}
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={(e) => {
+                e.preventDefault();
+                const fd = new FormData(e.currentTarget);
+                const name = String(fd.get("name") || "");
+                const email = String(fd.get("email") || "");
+                const type = String(fd.get("type") || "");
+                const msg = String(fd.get("msg") || "");
+                const subject = encodeURIComponent(`New project inquiry from ${name || "website"}${type ? ` , ${type}` : ""}`);
+                const body = encodeURIComponent(
+                  `Name: ${name}\nEmail: ${email}\nProject type: ${type}\n\n${msg}`
+                );
+                window.location.href = `mailto:breshmasuresh@gmail.com?subject=${subject}&body=${body}`;
+              }}
               className="lg:col-span-6 glass-strong rounded-3xl p-6 md:p-8 space-y-5"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Name</Label>
-                  <Input id="name" placeholder="Your name" className="bg-white/5 border-white/10 h-11" />
+                  <Input id="name" name="name" required placeholder="Your name" className="bg-white/5 border-white/10 h-11" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Email</Label>
-                  <Input id="email" type="email" placeholder="you@company.com" className="bg-white/5 border-white/10 h-11" />
+                  <Input id="email" name="email" type="email" required placeholder="you@company.com" className="bg-white/5 border-white/10 h-11" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="type" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Project type</Label>
-                <Input id="type" placeholder="e.g. Mobile app redesign" className="bg-white/5 border-white/10 h-11" />
+                <Input id="type" name="type" placeholder="e.g. Mobile app redesign" className="bg-white/5 border-white/10 h-11" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="msg" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Message</Label>
-                <Textarea id="msg" placeholder="Tell me about the problem you're solving…" className="bg-white/5 border-white/10 min-h-36" />
+                <Textarea id="msg" name="msg" required placeholder="Tell me about the problem you're solving…" className="bg-white/5 border-white/10 min-h-36" />
               </div>
               <Button type="submit" className="w-full h-12 rounded-full bg-foreground text-background hover:opacity-90 glow">
                 Send message <ArrowRight className="ml-2 h-4 w-4" />
