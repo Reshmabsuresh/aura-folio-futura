@@ -4,7 +4,7 @@ import { useRef } from "react";
 import {
   ArrowRight, ArrowDown, Mail, MapPin, Linkedin, Dribbble,
   Sparkles, Compass, Search, Lightbulb, PenTool, Layers, FlaskConical, Repeat, Rocket,
-  Figma, Palette, Bot, Wand2, Brush, Layout, Image as ImageIcon, Eye, Workflow, Box,
+  Figma, Wand2, Layout, Box,
 } from "lucide-react";
 import { GridBackdrop, Particles } from "@/components/portfolio/Noise";
 import { Button } from "@/components/ui/button";
