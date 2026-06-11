@@ -279,9 +279,9 @@ const projects: Project[] = [
   },
   {
     title: "AI Vibe Coding Project, E-commerce Designer Boutique Web App",
-    category: "Commerce",
-    role: "Senior Designer",
-    duration: "5 months",
+    category: "E-Commerce",
+    role: "UI/UX Designer",
+    duration: "24 hours",
     tools: ["Orchid AI", "Claude AI"],
     summary: "Re-architected discovery and checkout for a premium goods retailer, removing friction in the path to purchase.",
     image: pEcom,
@@ -513,11 +513,11 @@ function Tools() {
               <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition-colors duration-300">
                 {t.svg ? (
                   <span
-                    className="h-6 w-6 [&_svg]:h-full [&_svg]:w-full inline-flex"
+                    className="icon-svg h-6 w-6 [&_svg]:h-full [&_svg]:w-full inline-flex"
                     dangerouslySetInnerHTML={{ __html: t.svg }}
                   />
                 ) : t.icon ? (
-                  <t.icon className="h-6 w-6" />
+                  <t.icon className="h-6 w-6" strokeWidth={1.5} />
                 ) : null}
               </div>
               <div className="text-xs font-medium text-center">{t.name}</div>
@@ -582,21 +582,16 @@ function Contact() {
             <motion.form
               {...fadeUp}
               transition={{ delay: 0.2 }}
-              onSubmit={(e) => {
-                e.preventDefault();
-                const fd = new FormData(e.currentTarget);
-                const name = String(fd.get("name") || "");
-                const email = String(fd.get("email") || "");
-                const type = String(fd.get("type") || "");
-                const msg = String(fd.get("msg") || "");
-                const subject = encodeURIComponent(`New project inquiry from ${name || "website"}${type ? ` , ${type}` : ""}`);
-                const body = encodeURIComponent(
-                  `Name: ${name}\nEmail: ${email}\nProject type: ${type}\n\n${msg}`
-                );
-                window.location.href = `mailto:breshmasuresh@gmail.com?subject=${subject}&body=${body}`;
-              }}
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               className="lg:col-span-6 glass-strong rounded-3xl p-6 md:p-8 space-y-5"
             >
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Name</Label>
