@@ -196,6 +196,18 @@ function About() {
                 "With 3.5 years of experience in UI/UX design, I began my career as a web designer with a strong foundation in HTML, CSS, and JavaScript. I transitioned into UX because I believe great design isn't just about how a product looks, but about how it genuinely serves the user and solves real problems. In my work, my top priorities are the users, stakeholders, and market needs, ensuring each solution is both meaningful and viable. Driven by strong visualization skills and a deep curiosity for the 'why' behind design decisions, I am dedicated to delivering high-quality, impactful products on time."
               </p>
             </div>
+            <a
+              href="https://drive.google.com/file/d/1BNr32H4OkOy13dIjaXphwk0nq0vDCGBT/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-strong rounded-3xl p-8 lg:p-10 block hover:bg-white/[0.06] transition"
+            >
+              <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Resume</div>
+              <div className="mt-4 inline-flex items-center gap-2 text-foreground hover:text-violet transition">
+                <span className="text-base md:text-lg font-medium">Download CV</span>
+                <ArrowDown className="h-4 w-4" />
+              </div>
+            </a>
           </motion.div>
 
           <motion.div {...fadeUp} transition={{ delay: 0.1 }} className="lg:col-span-5 space-y-6">
@@ -303,14 +315,17 @@ function Work() {
             title={<>Selected <em className="text-gradient not-italic">project case studies</em>.</>}
           />
           <motion.a {...fadeUp} href="#contact" className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5">
-            Request full case studies <ArrowRight className="h-4 w-4" />
+            Explore full case studies <ArrowRight className="h-4 w-4" />
           </motion.a>
         </div>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-[minmax(280px,auto)]">
           {projects.map((p, i) => (
-            <motion.article
+            <motion.a
               key={p.title}
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -355,7 +370,7 @@ function Work() {
                   </div>
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>
@@ -520,7 +535,7 @@ function Tools() {
                     dangerouslySetInnerHTML={{ __html: t.svg }}
                   />
                 ) : t.icon ? (
-                  <t.icon className="h-6 w-6" strokeWidth={1.5} />
+                  <t.icon className="h-6 w-6" />
                 ) : null}
               </div>
               <div className="text-xs font-medium text-center">{t.name}</div>
