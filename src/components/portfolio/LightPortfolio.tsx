@@ -248,7 +248,7 @@ function LightHero() {
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden lg:flex justify-center pt-20"
+            className="hidden lg:flex justify-center pt-28"
           >
             <div className="relative">
               <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-blue-100 via-violet-50 to-cyan-50 blur-2xl opacity-70" aria-hidden="true" />
@@ -566,11 +566,11 @@ function BentoCard({ project, index, className }: { project: LightProject; index
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => setSelected(true)}
-        className={`group relative bg-[#FAFAF9] border border-[#EBEBEA] rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 ${
+        className={`group relative flex flex-col bg-[#FAFAF9] border border-[#EBEBEA] rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 ${
           hovered ? "card-shadow-hover -translate-y-0.5" : "card-shadow"
         } ${className}`}
       >
-        <div className={`relative overflow-hidden bg-slate-100 ${project.size === "large" ? "h-64 md:h-72" : project.size === "wide" ? "h-52 md:h-56" : "h-48"}`}>
+        <div className={`relative shrink-0 overflow-hidden bg-slate-100 ${project.size === "large" ? "h-64 md:h-72" : project.size === "wide" ? "h-52 md:h-56" : "h-48"}`}>
           <img
             src={project.image}
             alt={project.title}
@@ -595,7 +595,7 @@ function BentoCard({ project, index, className }: { project: LightProject; index
             </div>
           )}
         </div>
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-1 min-h-0">
           <p className={`text-[11px] font-mono tracking-[0.15em] uppercase mb-1.5 ${project.accentText}`}>{project.category}</p>
           <h3 className="font-display font-bold text-[17px] text-foreground tracking-tight mb-2 group-hover:opacity-70 transition-opacity leading-snug">
             {project.title}
@@ -608,7 +608,7 @@ function BentoCard({ project, index, className }: { project: LightProject; index
               ))}
             </div>
           )}
-          <div className="flex items-start justify-between pt-4 border-t border-[#EBEBEA] gap-2">
+          <div className="mt-auto flex items-start justify-between pt-4 border-t border-[#EBEBEA] gap-2">
             <span className="text-xs text-muted-foreground whitespace-nowrap pt-0.5">{project.role} · {project.duration}</span>
             <div className="flex gap-1.5 flex-wrap justify-end">
               {project.tools.map((t) => (
@@ -881,14 +881,14 @@ function LightContact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-start">
+        <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="p-8 rounded-3xl bg-white card-shadow border border-border"
+            className="p-8 rounded-3xl bg-white card-shadow border border-border h-full flex flex-col"
           >
             {sent ? (
-              <div className="py-16 text-center">
+              <div className="py-16 text-center m-auto">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-200">
                   <Send className="w-6 h-6 text-white" />
                 </div>
@@ -897,7 +897,7 @@ function LightContact() {
                 <button onClick={() => setSent(false)} className="mt-6 text-sm text-blue-600 hover:underline">Send another</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} name="contact-light" data-netlify="true" className="space-y-5">
+              <form onSubmit={handleSubmit} name="contact-light" data-netlify="true" className="space-y-5 flex-1 flex flex-col">
                 <input type="hidden" name="form-name" value="contact-light" />
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
@@ -938,7 +938,7 @@ function LightContact() {
                     </SelectContent>
                   </Select>
                 </div>
-                <div>
+                <div className="flex-1 flex flex-col">
                   <label className="text-xs font-semibold text-foreground/70 uppercase tracking-wider mb-2 block">Message</label>
                   <Textarea
                     value={formData.message}
@@ -946,7 +946,7 @@ function LightContact() {
                     placeholder="Tell me about your project, goals, and timeline..."
                     required
                     rows={5}
-                    className="rounded-xl border-border focus-visible:border-blue-300 focus-visible:ring-blue-100 bg-secondary/40 resize-none"
+                    className="rounded-xl border-border focus-visible:border-blue-300 focus-visible:ring-blue-100 bg-secondary/40 resize-none flex-1 min-h-36"
                   />
                 </div>
                 <motion.button
@@ -969,9 +969,9 @@ function LightContact() {
           <motion.div
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: 0.35, duration: 0.6 }}
-            className="space-y-4"
+            className="h-full flex flex-col gap-4"
           >
-            <div className="rounded-3xl overflow-hidden h-48 bg-gradient-to-br from-blue-50 via-violet-50 to-cyan-50">
+            <div className="rounded-3xl overflow-hidden h-48 shrink-0 bg-gradient-to-br from-blue-50 via-violet-50 to-cyan-50">
               <img src={CONTACT_VISUAL} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-80 animate-float" />
             </div>
 
@@ -990,10 +990,10 @@ function LightContact() {
                   </div>
                 </div>
               );
-              return item.href ? <a key={item.label} href={item.href} className="block">{inner}</a> : <div key={item.label}>{inner}</div>;
+              return item.href ? <a key={item.label} href={item.href} className="block shrink-0">{inner}</a> : <div key={item.label} className="shrink-0">{inner}</div>;
             })}
 
-            <div className="p-5 rounded-2xl bg-white card-shadow border border-border">
+            <div className="p-5 rounded-2xl bg-white card-shadow border border-border flex-1 flex flex-col justify-center">
               <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider mb-3">Find me on</p>
               <div className="flex gap-3">
                 {[
