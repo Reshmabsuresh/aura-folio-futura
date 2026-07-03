@@ -265,7 +265,7 @@ function LightHero() {
                 <p className="text-xs font-semibold text-foreground">Design Systems</p>
                 <div className="mt-1.5">
                   <div className="h-1.5 w-16 rounded-full bg-slate-200/80 overflow-hidden">
-                    <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-400 to-violet-400" />
+                    <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-500 via-violet-400 to-violet-200" />
                   </div>
                 </div>
               </motion.div>
@@ -278,7 +278,7 @@ function LightHero() {
                 <p className="text-xs font-semibold text-foreground">UX Research</p>
                 <div className="mt-1.5">
                   <div className="h-1.5 w-16 rounded-full bg-slate-200/80 overflow-hidden">
-                    <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-400 to-violet-400" />
+                    <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-500 via-violet-400 to-violet-200" />
                   </div>
                 </div>
               </motion.div>
@@ -436,7 +436,7 @@ const lightProjects: LightProject[] = [
     id: 1,
     title: "Botim money transfer, trust-first redesign",
     category: "FinTech · UX Research",
-    tags: ["User Journey Mapping", "Trust Building", "Financial UX"],
+    tags: [],
     role: "UX Designer",
     duration: "1 month",
     tools: ["Figma", "Claude AI"],
@@ -821,7 +821,7 @@ function LightTools() {
                 <motion.div
                   initial={{ width: 0 }} whileInView={{ width: `${tool.level}%` }} viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.3 + i * 0.05, ease: "easeOut" }}
-                  className="h-full rounded-full bg-gradient-to-r from-blue-400 to-violet-400"
+                  className="h-full rounded-full bg-gradient-to-r from-blue-500 via-violet-400 to-violet-200"
                 />
               </div>
             </motion.div>
