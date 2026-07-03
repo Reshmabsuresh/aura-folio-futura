@@ -258,28 +258,24 @@ function LightHero() {
               </div>
 
               <motion.div
-                className="absolute -left-10 top-12 glass-strong rounded-2xl px-4 py-3 card-shadow"
+                className="absolute -left-10 top-12 glass-strong rounded-2xl px-5 py-4 card-shadow min-w-[160px]"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <p className="text-xs font-semibold text-foreground">Design Systems</p>
-                <div className="mt-1.5">
-                  <div className="h-1.5 w-16 rounded-full bg-slate-200/80 overflow-hidden">
-                    <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-500 via-violet-400 to-violet-200" />
-                  </div>
+                <p className="text-sm font-bold text-foreground whitespace-nowrap">Design Systems</p>
+                <div className="mt-2.5 h-2 w-full rounded-full bg-slate-200/80 overflow-hidden">
+                  <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-500 via-violet-400 to-violet-200" />
                 </div>
               </motion.div>
 
               <motion.div
-                className="absolute -right-10 bottom-16 glass-strong rounded-2xl px-4 py-3 card-shadow"
+                className="absolute -right-10 bottom-16 glass-strong rounded-2xl px-5 py-4 card-shadow min-w-[160px]"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
               >
-                <p className="text-xs font-semibold text-foreground">UX Research</p>
-                <div className="mt-1.5">
-                  <div className="h-1.5 w-16 rounded-full bg-slate-200/80 overflow-hidden">
-                    <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-500 via-violet-400 to-violet-200" />
-                  </div>
+                <p className="text-sm font-bold text-foreground whitespace-nowrap">UX Research</p>
+                <div className="mt-2.5 h-2 w-full rounded-full bg-slate-200/80 overflow-hidden">
+                  <div className="h-full w-full rounded-full bg-gradient-to-r from-blue-500 via-violet-400 to-violet-200" />
                 </div>
               </motion.div>
             </div>
@@ -393,7 +389,9 @@ function LightAbout() {
               transition={{ delay: 0.25, duration: 0.7 }}
               className="relative rounded-3xl overflow-hidden mb-8 h-52 bg-gradient-to-br from-blue-50 to-violet-50"
             >
-              <img src={SHAPES_IMG} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-80 animate-float" />
+              <div className="relative w-full h-full animate-float">
+                <img src={SHAPES_IMG} alt="" aria-hidden="true" className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] max-w-none object-cover opacity-80" />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
             </motion.div>
 
@@ -972,7 +970,9 @@ function LightContact() {
             className="h-full flex flex-col gap-4"
           >
             <div className="rounded-3xl overflow-hidden h-48 shrink-0 bg-gradient-to-br from-blue-50 via-violet-50 to-cyan-50">
-              <img src={CONTACT_VISUAL} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-80 animate-float" />
+              <div className="relative w-full h-full animate-float">
+                <img src={CONTACT_VISUAL} alt="" aria-hidden="true" className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] max-w-none object-cover opacity-80" />
+              </div>
             </div>
 
             {[
