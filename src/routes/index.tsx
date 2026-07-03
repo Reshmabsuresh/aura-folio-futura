@@ -46,9 +46,10 @@ const fadeUp = {
 
 function Nav() {
   const items = [
-    { label: "Work", href: "#work" },
     { label: "About", href: "#about" },
+    { label: "Work", href: "#work" },
     { label: "Process", href: "#process" },
+    { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ];
   return (
@@ -456,7 +457,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="relative py-32 px-6 lg:px-10">
+    <section id="testimonials" className="relative py-32 px-6 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           kicker="Kind words"

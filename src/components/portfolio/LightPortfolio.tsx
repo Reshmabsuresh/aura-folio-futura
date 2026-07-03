@@ -990,7 +990,7 @@ function LightContact() {
                   </div>
                 </div>
               );
-              return item.href ? <a key={item.label} href={item.href}>{inner}</a> : <div key={item.label}>{inner}</div>;
+              return item.href ? <a key={item.label} href={item.href} className="block">{inner}</a> : <div key={item.label}>{inner}</div>;
             })}
 
             <div className="p-5 rounded-2xl bg-white card-shadow border border-border">
