@@ -11,6 +11,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useTheme } from "@/lib/theme";
+import { ThemeToggle } from "@/components/portfolio/ThemeToggle";
+import { LightPortfolio } from "@/components/portfolio/LightPortfolio";
 
 import heroBg from "@/assets/hero-bg.jpg";
 import portrait from "@/assets/portrait-new.png";
@@ -63,6 +66,7 @@ function Nav() {
             </a>
           ))}
         </div>
+        <ThemeToggle className="glass h-8 w-8 hover:bg-foreground/10" />
         <a href="#contact" className="ml-1 inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-background hover:opacity-90 transition">
           Let's talk <ArrowRight className="h-3.5 w-3.5" />
         </a>
@@ -112,7 +116,7 @@ function Hero() {
               <a href="#work" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90 transition glow">
                 View my work <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="mailto:breshmasuresh@gmail.com" className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium hover:bg-white/10 transition">
+              <a href="mailto:breshmasuresh@gmail.com" className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium hover:bg-foreground/10 transition">
                 Send an email
               </a>
             </motion.div>
@@ -200,7 +204,7 @@ function About() {
               href="https://drive.google.com/file/d/1BNr32H4OkOy13dIjaXphwk0nq0vDCGBT/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-strong rounded-3xl p-8 lg:p-10 block hover:bg-white/[0.06] transition"
+              className="glass-strong rounded-3xl p-8 lg:p-10 block hover:bg-foreground/[0.06] transition"
             >
               <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Resume</div>
               <div className="mt-4 inline-flex items-center gap-2 text-foreground hover:text-violet transition">
@@ -526,7 +530,7 @@ function Tools() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="group glass-strong grad-border rounded-2xl p-5 aspect-square flex flex-col items-center justify-center gap-3 hover:bg-white/[0.06] transition"
+              className="group glass-strong grad-border rounded-2xl p-5 aspect-square flex flex-col items-center justify-center gap-3 hover:bg-foreground/[0.06] transition"
             >
               <div className="h-12 w-12 rounded-xl glass flex items-center justify-center overflow-hidden text-foreground/90 group-hover:text-violet transition-colors duration-300">
                 {t.svg ? (
@@ -590,7 +594,7 @@ function Contact() {
                   { icon: Box, label: "Behance", href: "https://www.behance.net/reshmasuresh4" },
                   { icon: Dribbble, label: "Dribbble", href: "https://dribbble.com/Reshmasuresh" },
                 ].map((s) => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="glass grad-border rounded-full px-4 py-2 text-sm inline-flex items-center gap-2 hover:bg-white/10 transition">
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="glass grad-border rounded-full px-4 py-2 text-sm inline-flex items-center gap-2 hover:bg-foreground/10 transition">
                     <s.icon className="h-3.5 w-3.5" /> {s.label}
                   </a>
                 ))}
@@ -613,20 +617,20 @@ function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Name</Label>
-                  <Input id="name" name="name" required placeholder="Your name" className="bg-white/5 border-white/10 h-11" />
+                  <Input id="name" name="name" required placeholder="Your name" className="bg-foreground/5 border-foreground/10 h-11" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Email</Label>
-                  <Input id="email" name="email" type="email" required placeholder="you@company.com" className="bg-white/5 border-white/10 h-11" />
+                  <Input id="email" name="email" type="email" required placeholder="you@company.com" className="bg-foreground/5 border-foreground/10 h-11" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="type" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Project type</Label>
-                <Input id="type" name="type" placeholder="e.g. Mobile app redesign" className="bg-white/5 border-white/10 h-11" />
+                <Input id="type" name="type" placeholder="e.g. Mobile app redesign" className="bg-foreground/5 border-foreground/10 h-11" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="msg" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Message</Label>
-                <Textarea id="msg" name="msg" required placeholder="Tell me about the problem you're solving…" className="bg-white/5 border-white/10 min-h-36" />
+                <Textarea id="msg" name="msg" required placeholder="Tell me about the problem you're solving…" className="bg-foreground/5 border-foreground/10 min-h-36" />
               </div>
               <Button type="submit" className="w-full h-12 rounded-full bg-foreground text-background hover:opacity-90 glow">
                 Send message <ArrowRight className="ml-2 h-4 w-4" />
@@ -657,7 +661,7 @@ function Footer() {
   );
 }
 
-function Portfolio() {
+function DarkPortfolio() {
   return (
     <main className="relative min-h-screen overflow-x-clip">
       <GridBackdrop />
@@ -672,4 +676,9 @@ function Portfolio() {
       <Footer />
     </main>
   );
+}
+
+function Portfolio() {
+  const { theme } = useTheme();
+  return theme === "dark" ? <DarkPortfolio /> : <LightPortfolio />;
 }

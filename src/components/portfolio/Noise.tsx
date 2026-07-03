@@ -5,7 +5,7 @@ export function GridBackdrop() {
         className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+            "linear-gradient(to right, var(--color-foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--color-foreground) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
           maskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
         }}
@@ -24,7 +24,7 @@ export function Particles() {
       {dots.map((_, i) => (
         <span
           key={i}
-          className="absolute block h-1 w-1 rounded-full bg-white/40"
+          className="absolute block h-1 w-1 rounded-full bg-foreground/40"
           style={{
             top: `${(i * 53) % 100}%`,
             left: `${(i * 37) % 100}%`,

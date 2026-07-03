@@ -6,6 +6,13 @@
     <title>Reshma Suresh, UX/UI Designer</title>
     <meta name="description" content="Portfolio of Reshma Suresh, a UX/UI designer crafting intuitive digital experiences that connect business goals with human needs." />
     <meta name="author" content="Reshma Suresh" />
+    <script>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var isDark = stored ? stored === "dark" : true;
+        document.documentElement.classList.toggle("dark", isDark);
+      })();
+    </script>
 
     <meta property="og:title" content="Reshma Suresh, UX/UI Designer" />
     <meta property="og:description" content="Award-quality UX work across fintech, HR, health, and e-commerce." />
