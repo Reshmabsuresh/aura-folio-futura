@@ -21,6 +21,7 @@ import pBotim from "@/assets/project-botim-new.png";
 import pFintech from "@/assets/project-fintech-new.png";
 import pFitness from "@/assets/project-fitness-new.jpg";
 import pEcom from "@/assets/project-vibe-ecom.png";
+import pCloudKitchen from "@/assets/project-cloudkitchen.png";
 
 import tChatgpt from "@/assets/tools-svg/chatgpt.svg?raw";
 import tClaude from "@/assets/tools-svg/claude.svg?raw";
@@ -306,6 +307,18 @@ const projects: Project[] = [
     span: "lg:col-span-6",
     tone: "from-magenta/30 via-transparent to-cyan/20",
     link: "https://voidfuturefashion.store/",
+  },
+  {
+    title: "Kitchen Command, Cloud Kitchen Operations Dashboard",
+    category: "Product Design · Internal Tools",
+    role: "Product Designer",
+    duration: "6 weeks",
+    tools: ["Figma", "Claude AI"],
+    summary: "Designed a real-time operations dashboard for a multi-brand cloud kitchen in Dubai, tracking orders from arrival to dispatch, monitoring station load, and surfacing at-risk orders before they breach, through a calm, spacious interface built for clarity under pressure.",
+    image: pCloudKitchen,
+    span: "lg:col-span-12",
+    tone: "from-cyan/30 via-transparent to-magenta/20",
+    link: "https://www.figma.com/proto/yuXLWj0CJLZgbn079kUWPi/Easy-peasy---Cloud-Kitchen?node-id=375-9875&viewport=-929%2C-223%2C0.32&t=mxWIARWEy7DTdy3w-1&scaling=min-zoom&content-scaling=fixed&page-id=56%3A1586",
   },
 ];
 
